@@ -9,7 +9,7 @@ auth=os.getenv('TOKEN')
 url = "https://greenestep.giftai.co.in/api/v1/csv"
 
 headers = {
-  'Cookie': 'ticket=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InNoYXJlX2RldmFyYWpAdGVjaGNvYWNoNHUuY29tIiwiaWQiOjMsInR5cGUiOiJBRE1JTiIsImlhdCI6MTc0MjM4NDc3MiwiZXhwIjoxNzQyNDI3OTcyfQ.PMgrPheJrEtQUvK3qWAYv6Nc-9Pp6RKhMYl3kwzhf1M',
+  'Cookie': 'ticket=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InNoYXJlX2RldmFyYWpAdGVjaGNvYWNoNHUuY29tIiwiaWQiOjMsInR5cGUiOiJBRE1JTiIsImlhdCI6MTc0ODk1Nzk4MSwiZXhwIjoxNzQ5MDAxMTgxfQ.LOHabRG3foQcHtYXmPxNjFJbJ7_y0XaesZyZA1fNajM',
   'Content-Type': 'application/json',
   'Authorization': f'Bearer {auth}'
 }

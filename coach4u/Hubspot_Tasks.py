@@ -7,10 +7,15 @@ from hubspot.crm.owners import OwnersApi
 from dotenv import load_dotenv
 import os
 
+load_dotenv(dotenv_path=r"C:\Users\devar\Documents\Code\GIFT\.env")
 load_dotenv()
-access_token = os.getenv("HUBSPOT_ACCESS_TOKEN")
+access_token = os.getenv("T4U")
+
+cookie_ticket = os.getenv("T4U_COOKIE")
+
+
 # Get HubSpot Data
-client = hubspot.Client.create(access_token=access_token)
+client = hubspot.Client.create(access_token=access_token)   
 
 def get_owner_names():
     """Fetch and map owner IDs to names."""
@@ -87,9 +92,11 @@ files=[
 ]
 
 headers = {
-  'Cookie': 'ticket=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InNoYXJlX2RldmFyYWpAdGVjaGNvYWNoNHUuY29tIiwiaWQiOjMsInR5cGUiOiJBRE1JTiIsImlhdCI6MTc0MjU0MDgyNCwiZXhwIjoxNzQyNTg0MDI0fQ.pYzQnz9eWDho4JvoBwNmT8nA2t1Ra_BxOsP4o6Yl0RE'
+  'Cookie': f'ticket={cookie_ticket}',
 }
 
+
+print(headers)
 response = requests.request("POST", url, headers=headers, data=payload, files=files)
 
 print(response.text)

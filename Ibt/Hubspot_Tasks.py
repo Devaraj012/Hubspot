@@ -7,8 +7,11 @@ from hubspot.crm.owners import OwnersApi
 from dotenv import load_dotenv
 import os
 
+load_dotenv(dotenv_path=r"C:\Users\devar\Documents\Code\GIFT\.env")
 load_dotenv()
-access_token = os.getenv("HUBSPOT_ACCESS_TOKEN")
+access_token = os.getenv("T4U")
+
+cookie_ticket = os.getenv("IBT_COOKIE")
 
 # Get HubSpot Data
 client = hubspot.Client.create(access_token=access_token)
@@ -88,7 +91,7 @@ files=[
 ]
 
 headers = {
-  'Cookie': 'ticket=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImRldmFyYWpAaWJhY3VzdGVjaGxhYnMuaW4iLCJpZCI6NCwidHlwZSI6IkFETUlOIiwiaWF0IjoxNzQyNTM4Mzg0LCJleHAiOjE3NDI1ODE1ODR9.M2FXM5VskT1T7VHDouULwiVfOTnlsj5cpcyu0odrvKc'
+  'Cookie': f'ticket={cookie_ticket}'
 }
 
 response = requests.request("POST", url, headers=headers, data=payload, files=files)
